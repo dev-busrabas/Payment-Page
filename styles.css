@@ -1,0 +1,98 @@
+
+.card {
+    border-radius: 10px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logo-container img {
+    max-width: 50px;
+    margin: 0 10px;
+}
+
+/* Kredi kartı görseli */
+.credit-card-container {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+.credit-card {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    box-shadow: 0 4px 8px rgb(49, 49, 49);
+}
+
+.credit-card.flip {
+    transform: rotateY(180deg);
+}
+
+.credit-card .card-front,
+.credit-card .card-back {
+    position: absolute;
+    width: 90%;
+    backface-visibility: hidden;
+}
+
+/* Kartın ön yüzü */
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-number {
+    font-size: 1.4em;
+    letter-spacing: 2px;
+}
+
+.card-name {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.expiry-date {
+    font-size: 1.1em;
+    float: right;
+}
+
+/* Kartın arka yüzü */
+.card-back {
+    transform: rotateY(180deg);
+    background-color: rgb(49, 49, 49);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.card-back .magnetic-strip {
+    background-color: black;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.card-back .cvv-box {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.card-back .cvv-box .cvv {
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: rgb(49, 49, 49);
+}
