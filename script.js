@@ -13,9 +13,9 @@ function updateCard() {
 
 function formatCardNumber() {
     const input = document.getElementById("cardNumber");
-    let value = input.value.replace(/\s/g, ''); // Boşlukları kaldır
-    const formattedValue = value.replace(/(.{4})/g, '$1 ').trim(); // Her 4 karakterde bir boşluk ekle
-    input.value = formattedValue; // Formatlanmış değeri input'a ata
+    let value = input.value.replace(/\s/g, '');
+    const formattedValue = value.replace(/(.{4})/g, '$1 ').trim(); 
+    input.value = formattedValue; 
 }
 
 function flipCard(flip) {

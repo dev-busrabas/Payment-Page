@@ -14,7 +14,6 @@
     margin: 0 10px;
 }
 
-/* Kredi kartı görseli */
 .credit-card-container {
     perspective: 1000px;
     width: 100%;
@@ -46,7 +45,6 @@
     backface-visibility: hidden;
 }
 
-/* Kartın ön yüzü */
 .card-front {
     display: flex;
     flex-direction: column;
@@ -68,7 +66,6 @@
     float: right;
 }
 
-/* Kartın arka yüzü */
 .card-back {
     transform: rotateY(180deg);
     background-color: rgb(49, 49, 49);
