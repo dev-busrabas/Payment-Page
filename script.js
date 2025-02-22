@@ -1,4 +1,3 @@
-
 function updateCard() {
     const cardNumber = document.getElementById("cardNumber").value;
     const cardName = document.getElementById("cardName").value;
@@ -14,8 +13,8 @@ function updateCard() {
 function formatCardNumber() {
     const input = document.getElementById("cardNumber");
     let value = input.value.replace(/\s/g, '');
-    const formattedValue = value.replace(/(.{4})/g, '$1 ').trim(); 
-    input.value = formattedValue; 
+    const formattedValue = value.replace(/(.{4})/g, '$1 ').trim();
+    input.value = formattedValue;
 }
 
 function flipCard(flip) {
@@ -25,4 +24,32 @@ function flipCard(flip) {
     } else {
         card.classList.remove("flip");
     }
+}
+
+function formatExpiryDate() {
+    const input = document.getElementById('expiryDate');
+    let value = input.value.replace(/\D/g, '');
+
+    
+    if (value.length >= 1 && value[0] !== '1' && value[0] !== '0') {
+        value = '0' + value;
+    }
+
+    
+    let month = value.slice(0, 2);
+    if (month > 12) {
+        month = '12'; 
+    }
+
+    
+    value = month + value.slice(2, 4).slice(0, 2); 
+    
+    
+    if (value.length > 2) {
+        value = value.slice(0, 2) + '/' + value.slice(2, 4);
+    }
+
+    input.value = value; 
+
+    updateCard(value);
 }

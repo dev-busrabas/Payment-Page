@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fatura Bilgileri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card p-4">
+                    <h3 class="text-center mb-4 text-dark">Fatura Bilgileri</h3>
+                    <form id="invoiceForm">
+                        <div class="mb-3">
+                            <label for="invoiceName" class="text-dark form-label">Ad Soyad</label>
+                            <input type="text" class="form-control" id="invoiceName" placeholder="Ad Soyad" required pattern="[A-Za-zıİşŞğĞüÜçÇ ]{1,50}" title="Lütfen sadece harf girin.">
+                        </div>
+                        <div class="mb-3">
+                            <label for="invoiceAddress" class="text-dark form-label">Fatura Adresi</label>
+                            <input type="text" class="form-control" id="invoiceAddress" placeholder="Fatura Adresi" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="invoiceEmail" class="text-dark form-label">E-posta</label>
+                            <input type="email" class="form-control" id="invoiceEmail" placeholder="E-posta" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="invoicePhone" class="text-dark form-label">Telefon Numarası</label>
+                            <input type="tel" class="form-control" id="invoicePhone" placeholder="Telefon Numarası" required pattern="\d{10}" maxlength="10" title="Lütfen 10 haneli bir telefon numarası girin.">
+                        </div>
+                    </form>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-danger" onclick="validateForm()">Sonraki Adım</button>
+                    </div>
+                </div>
+            </div>       
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function validateForm() {
+            const form = document.getElementById('invoiceForm');
+            if (form.checkValidity()) {
+                window.location.href = "odeme.html"; 
+            } else {
+                form.reportValidity();
+            }
+        }
+    </script>
+</body>
+
+</html>
